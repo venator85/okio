@@ -221,6 +221,11 @@ public final class Okio {
     return timeout.source(source);
   }
 
+  /** Clears the segment pool. */
+  public static void clear() {
+    SegmentPool.clear();
+  }
+
   private static AsyncTimeout timeout(final Socket socket) {
     return new AsyncTimeout() {
       @Override protected IOException newTimeoutException(IOException cause) {

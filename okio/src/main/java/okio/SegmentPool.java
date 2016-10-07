@@ -57,4 +57,11 @@ final class SegmentPool {
       next = segment;
     }
   }
+
+  static void clear() {
+    synchronized (SegmentPool.class) {
+      next = null;
+      byteCount = 0;
+    }
+  }
 }
